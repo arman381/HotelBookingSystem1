@@ -58,7 +58,7 @@ public class Booking {
                 "\nRoom: " + room.getDescription() +
                 "\nCheck-in: " + checkIn + ", Check-out: " + checkOut + " (" + nights + " nights)" +
                 "\nExtra services: " + serviceList +
-                "\nTotal cost: " + String.format("%.2f USD", totalPrice) +
+                "\nTotal cost: " + String.format("%.2f", totalPrice) + " USD" +
                 "\nThank you for choosing our hotel!";
     }
 

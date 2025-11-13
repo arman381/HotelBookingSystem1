@@ -1,5 +1,6 @@
 package observer;
+import model.Booking;
 
 public interface BookingObserver {
-    void update(String message);
+    void onBookingCreated(Booking b, String msg);
 }

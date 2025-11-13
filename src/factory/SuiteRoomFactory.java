@@ -1,11 +1,14 @@
 package factory;
-
-import model.Room;
-import model.SuiteRoom;
+import model.*;
+import decorator.*;
 
 public class SuiteRoomFactory implements RoomFactory {
     @Override
     public Room createRoom() {
-        return new SuiteRoom();
+        Room room = new SuiteRoom();
+        room = new WifiDecorator(room);
+        room = new BreakfastDecorator(room);
+        room = new ParkingDecorator(room);  // парковка в базе
+        return room;
     }
 }

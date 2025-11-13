@@ -1,8 +1,11 @@
 package observer;
+import model.Booking;
 
 public class EmailNotification implements BookingObserver {
-    @Override
-    public void update(String message) {
-        System.out.println("[EMAIL] " + message);
+        public void onBookingCreated(Booking b, String text) {
+            System.out.println("Email: " + text);
+            // System.out.println("  Customer: " + b.getCustomer());
+            // System.out.println("  Room: " + b.getRoom().getDescription());
+            // System.out.println("  From: " + b.getCheckIn() + " to " + b.getCheckOut());
     }
 }

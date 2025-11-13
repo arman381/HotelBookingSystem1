@@ -1,11 +1,11 @@
 package factory;
-
-import model.Room;
-import model.StandardRoom;
+import model.*;
+import decorator.*;
 
 public class StandardRoomFactory implements RoomFactory {
-    @Override
     public Room createRoom() {
-        return new StandardRoom();
+        Room room = new StandardRoom();
+        room = new WifiDecorator(room); //вайфай в базе
+        return room;
     }
 }

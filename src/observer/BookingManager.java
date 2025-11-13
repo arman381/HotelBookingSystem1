@@ -1,18 +1,18 @@
 package observer;
-
+import model.Booking;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BookingManager {
-    private final List<BookingObserver> observers = new ArrayList<>();
+    private List<BookingObserver> list = new ArrayList<>();
 
-    public void addObserver(BookingObserver observer) {
-        observers.add(observer);
+    public void add(BookingObserver o) {
+        list.add(o);
     }
 
-    public void notifyObservers(String message) {
-        for (BookingObserver observer : observers) {
-            observer.update(message);
+    public void send(Booking b, String text) {
+        for (BookingObserver o : list) {
+            o.onBookingCreated(b, text);
         }
     }
 }
